@@ -7,5 +7,8 @@
 	}
 </script>
 
-<style>
+<style scoped="scoped">
+	body{
+		height: 100vh;
+	}
 </style>
