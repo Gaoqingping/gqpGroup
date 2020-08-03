@@ -1,9 +1,22 @@
 <template>
   <div id="app">
+<<<<<<< HEAD
+    <!--路由站位符-->
+    <router-view />
+=======
     <router-view></router-view>
+>>>>>>> gqp/master
   </div>
 </template>
+<script>
+export default {
+  name: "app",
+};
+</script>
 
+<<<<<<< HEAD
+<style></style>
+=======
 
 
 export default {
@@ -19,3 +32,4 @@ export default {
   overflow: hidden;
   
 </style>
+>>>>>>> gqp/master
