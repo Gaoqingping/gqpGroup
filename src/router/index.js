@@ -1,5 +1,7 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+
+import Vue from "vue";
+import VueRouter from "vue-router";
+
 
 
 
@@ -11,13 +13,10 @@ const Welcome = () => import(/* webpackChunkName: "Login_Home_Welcome" */ '../co
 const Users = () => import(/* webpackChunkName: "Users_Rights_Roles" */ '../components/user/User.vue')
 const Rights = () => import(/* webpackChunkName: "Users_Rights_Roles" */ '../components/power/Rights.vue')
 const Roles = () => import(/* webpackChunkName: "Users_Rights_Roles" */ '../components/power/Roles.vue')
-
 const Cate = () => import(/* webpackChunkName: "Cate_Params" */ '../components/goods/Cate.vue')
 const Params = () => import(/* webpackChunkName: "Cate_Params" */ '../components/goods/Params.vue')
-
 const GoodsList = () => import(/* webpackChunkName: "GoodsList_Add" */ '../components/goods/List.vue')
 const Add = () => import(/* webpackChunkName: "GoodsList_Add" */ '../components/goods/Add.vue')
-
 const Order = () => import(/* webpackChunkName: "Order_Report" */ '../components/order/Order.vue')
 const Report = () => import(/* webpackChunkName: "Order_Report" */ '../components/report/Report.vue')
 const Error = () => import(/* webpackChunkName: "Order_Report" */ '../components/error/404.vue')
@@ -58,6 +57,7 @@ const routes = [
 const router = new VueRouter({
   routes
 })
+
 
 // 挂载路由导航守卫,to表示将要访问的路径，from表示从哪里来，next是下一个要做的操作 next('/login')强制跳转login
 router.beforeEach((to, from, next) => {
