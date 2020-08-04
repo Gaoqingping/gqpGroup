@@ -78,6 +78,7 @@
           <el-form-item label="手机" prop="mobile">
             <el-input v-model="addForm.mobile"></el-input>
           </el-form-item>
+		  </el-form>
             <!-- 底部区域 -->
         <span slot="footer" class="dialog-footer">
           <el-button @click="addDialogVisible = false">取 消</el-button>
@@ -204,17 +205,15 @@ export default {
     this.getUserList();
   },
   methods: {
-    async getUserList() {
-      //异步
-      const { data: res } = await this.$http.get("users", {
-        params: this.queryInfo,
-      });
-      if ((res.meta, status !== 200)) {
-        return this.$message, error("获取用户列表失败!");
+    async getUserList () {
+      const { data: res } = await this.$http.get('users', {
+        params: this.queryInfo
+      })
+      if (res.meta.status !== 200) {
+        return this.$message.error('获取用户列表失败！')
       }
-      this.userlist = res.data.users;
-      this.totalt = res.data.totalt;
-      console.log(res)
+      this.userlist = res.data.users
+      this.totle = res.data.totle
     },
     //监听pagesize改变的事件
     handleSizeChange(newSize) {
@@ -229,13 +228,13 @@ export default {
       this.getUserList()
     },
     //监听switch开关的改变
-    userStateChanged(userinfo) {
+   async userStateChanged(userinfo) {
       console.log(userinfo)
       const {data: res } = await this.$http.put(`users/${userinfo.id}/state/$
       {userinfo.mg_state}`)
       if(res.meta.status !== 200){
         userinfo.mg_state = !userinfo.mg_state
-        return this.$$message,error('更新用户状态失败！')
+        return this.$message,error('更新用户状态失败！')
       }
       this.$message.success('更新用户状态成功！')
     },
