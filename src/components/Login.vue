@@ -19,7 +19,7 @@
 				</div> -->
 
 
-<el-form ref="loginFormRef" :model="loginForm" :rules="loginFormRules" label-width="60px"  class="login_form">
+<el-form ref="loginFormRef" :model="loginForm" :rules="loginFormRules" label-width="60px"  class="login_form" status-icon>
 				
 				
 				  <el-form-item label="账号" prop="username">
@@ -29,8 +29,13 @@
 				  <el-form-item label="密码" prop="password">
 				    <el-input
 				      v-model="loginForm.password"
-				      type="password"
-				      prefix-icon="iconfont icon-3702mima"
+				      prefix-icon="iconfont icon-password"
+					  autocomplete="off"
+					  @click.native="changeType"
+					  :type="isOpen ? 'text' : 'password'"
+					  :suffix-icon="
+					    isOpen ? 'iconfont icon-icon-test' : 'iconfont icon-biyan'
+					  "
 				    ></el-input>
 				  </el-form-item>
 				  
@@ -38,6 +43,10 @@
 						 <el-button class="btn" type="primary" @click="login">登录</el-button>
 						 <el-button class="btn" type="warning" @click="resetLoginForm">重置</el-button>
 				 </div>
+				
+				
+				
+				
 				
 				</el-form>
 			</div>
@@ -52,6 +61,7 @@
 	export default {
 		data() {
 			return {
+				isOpen:false,
 				//登录用户名和密码设定
 				loginForm: {
 					username: 'admin',
@@ -87,6 +97,14 @@
 			}
 		},
 		methods: {
+			//显示密码
+			changeType(e) {
+			  // console.log(e);
+			  if (e.target.className.includes("iconfont")) {
+			    this.isOpen = !this.isOpen;
+			  }
+			},
+			
 			// 表单重置按钮
 			resetLoginForm() {
 				this.$refs.loginFormRef.resetFields()
@@ -122,7 +140,7 @@
 		width: 450px;
 		height: 360px;
 		background-color: #fff;
-		border-radius: 3px;
+		border-radius: 10px;
 		position: absolute;
 		left: 50%;
 		top: 50%;
@@ -132,20 +150,31 @@
 		.avatar_box {
 			width: 130px;
 			height: 130px;
-			border: 1px solid #eee;
-			border-radius: 50%;
+			border-radius: 8px;
 			padding: 10px;
-			box-shadow: 0 0 10px #ddd;
 			position: absolute;
 			left: 50%;
-			transform: translate(-50%, -50%);
-			background-color: #fff;
+			transform: translate(-50%, -60%);
+			background-color: #1495e7;
+			&::after{
+				content: '';
+				width: 130px;
+				height: 130px;
+				// border-radius: 50%;
+				padding: 10px;
+				position: absolute;
+				border-radius: 8px;
+				top: 0px;
+				left: 0px;
+				transform: rotateZ(45deg);
+				background-color: #1495e7;
+				z-index: -1;
+			}
 
 			img {
 				width: 100%;
 				height: 100%;
 				border-radius: 50%;
-				background-color: #eee;
 			}
 		}
 

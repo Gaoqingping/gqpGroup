@@ -1,0 +1,79 @@
+{
+  "id": "1986499",
+  "name": "vueshop",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "2570196",
+      "name": "闭眼",
+      "font_class": "biyan",
+      "unicode": "e67d",
+      "unicode_decimal": 59005
+    },
+    {
+      "icon_id": "10468862",
+      "name": "眼睛",
+      "font_class": "icon-test",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
+      "icon_id": "5880957",
+      "name": "user",
+      "font_class": "user",
+      "unicode": "e677",
+      "unicode_decimal": 58999
+    },
+    {
+      "icon_id": "12779504",
+      "name": "password",
+      "font_class": "password",
+      "unicode": "e65d",
+      "unicode_decimal": 58973
+    },
+    {
+      "icon_id": "1409640",
+      "name": "14权限管理",
+      "font_class": "quanxianguanli",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "1978436",
+      "name": "本班组生产订单管理",
+      "font_class": "benbanzushengchandingdanguanli",
+      "unicode": "e64b",
+      "unicode_decimal": 58955
+    },
+    {
+      "icon_id": "4511910",
+      "name": "用户管理",
+      "font_class": "yonghuguanli",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    },
+    {
+      "icon_id": "5387669",
+      "name": "树状图",
+      "font_class": "shuzhuangtu",
+      "unicode": "eb2c",
+      "unicode_decimal": 60204
+    },
+    {
+      "icon_id": "12865006",
+      "name": "客流统计",
+      "font_class": "kltj",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "14310218",
+      "name": "商品管理",
+      "font_class": "shangpinguanli",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    }
+  ]
+}

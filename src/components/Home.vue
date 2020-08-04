@@ -19,10 +19,15 @@
 				
 				<div class="toggle-button" @click="isCollapse = !isCollapse"><i :class="isCollapse?'el-icon-d-arrow-right':'el-icon-d-arrow-left'"></i></div>
 				
-				 <el-menu unique-opened :collapse="isCollapse" :collapse-transition="false" router :default-active="activePath" background-color="#333744" text-color="#fff" active-text-color="#ff5d0d">
-				    <!-- :unique-opened="true"->只允许展开一个菜单 -->
-				    <!-- :collapse-transition="false" -> 关闭动画 -->
-				    <!-- router -> 导航开启路由模式 -->
+				 <el-menu 
+				 unique-opened 
+				 :collapse="isCollapse"
+				  :collapse-transition="false" 
+				  router 
+				  :default-active="activePath" 
+				 
+				  >
+		
 				   <!-- 一级菜单  -->
 				   <el-submenu :index="item.id+''" v-for="item in menuList" :key="item.id">
 				     <!-- 一级菜单的模板区域 -->
@@ -31,12 +36,18 @@
 				       <span>{{ item.authName}}</span>
 				     </template>
 				     <!-- 二级菜单 -->
-				     <el-menu-item :index="'/' + subItem.path" v-for="subItem in item.children" :key="subItem.id" @click="saveNavState('/' + subItem.path)">
+				     <el-menu-item 
+					 :index="'/' + subItem.path"
+					  v-for="subItem in item.children" 
+					  :key="subItem.id"
+					   @click="saveNavState('/' + subItem.path)">
+					   
+					   
 				       <!-- 导航开启路由模式：
 				         将index值作为导航路由 -->
 				       <!-- 二级菜单的模板区域 -->
 				       <template slot="title">
-				         <i class="el-icon-menu"></i>
+				         <i class="iconfont icon-shuzhuangtu"></i>
 				         <span>{{ subItem.authName}}</span>
 				       </template>
 				     </el-menu-item>
@@ -57,7 +68,7 @@
 				</el-aside>
 				
 				
-				<!-- 内容主体 -->
+				<!-- 首页-->
 				<el-main>
 				  <router-view></router-view>
 				</el-main>
@@ -76,11 +87,11 @@
 			  // 左侧菜单数据
 			  menuList: [],
 			  iconObj: {
-			    '125': 'iconfont icon-user',
-			    '103': 'iconfont icon-tijikongjian',
-			    '101': 'iconfont icon-shangpin',
-			    '102': 'iconfont icon-danju',
-			    '145': 'iconfont icon-baobiao'
+			    '125': 'iconfont icon-yonghuguanli',
+			    '103': 'iconfont icon-quanxianguanli',
+			    '101': 'iconfont icon-shangpinguanli',
+			    '102': 'iconfont icon-benbanzushengchandingdanguanli',
+			    '145': 'iconfont icon-kltj'
 			  },
 			  // 默认不折叠
 			  isCollapse: false,
@@ -140,10 +151,25 @@
 	.el-aside {
 	  background-color: #2b3140;
 	
-	  .el-menu {
-	    border: none;
+	  // .el-menu {
+	  //   border: none;
+	  // }
+	  .el-menu-item,
+	  /deep/ .el-submenu__title {
+	    color: #fff;
+		background-color: #1c212b;
 	  }
-	  
+	  /deep/ .el-menu-item:focus,
+	  /deep/ .el-menu-item:hover,
+	  /deep/.el-submenu__title:hover {
+	    outline: 0;
+		color: #0055ff;
+		background-color: rgb(49,83,120);
+	  }
+	  /deep/ .el-menu-item.is-active {
+	    color: #ffaa00;
+		background-color:#e5e9ef;
+	  }
 	  
 	  
 	  
@@ -154,6 +180,7 @@
 	
 	.iconfont{
 	  margin-right: 10px;
+	  
 	}
 	
 	.toggle-button {
