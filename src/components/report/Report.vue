@@ -1,5 +1,4 @@
 <template>
-
 	<el-container>
 		<!-- Breadcrumb 面包屑 -->
 		<el-breadcrumb separator-class="el-icon-arrow-right">
@@ -14,7 +13,6 @@
 
 
 	</el-container>
-
 </template>
 
 <script>
