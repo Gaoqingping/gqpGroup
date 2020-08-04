@@ -1,5 +1,5 @@
 <template>
-	<h1>我是r</h1>
+  <h1>我是r</h1>
 </template>
 
 <script>
