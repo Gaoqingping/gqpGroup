@@ -10,11 +10,11 @@
     <!-- 卡片视图区域 -->
     <el-card>
         <el-row>
-            <el-col :span="8">
-                <el-input placeholder="请输入内容">
-    <el-button slot="append" icon="el-icon-search"></el-button>
-  </el-input>
-            </el-col>
+          <el-col :span="6">
+            <el-input placeholder="请输入内容">
+              <el-button slot="append" icon="el-icon-search"></el-button>
+            </el-input>
+          </el-col>
         </el-row>
     
 
