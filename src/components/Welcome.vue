@@ -1,5 +1,12 @@
 <template>
   <div>
+	  <!-- Breadcrumb 面包屑 -->
+	  <el-breadcrumb separator-class="el-icon-arrow-right">
+	  	<el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
+	  	<el-breadcrumb-item>后台首页</el-breadcrumb-item>
+	  </el-breadcrumb>
+	  
+	  
     <!-- 2.为Echarts准备一个Dom -->
     <el-row>
       <el-col :span="16">
