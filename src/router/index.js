@@ -31,27 +31,27 @@ VueRouter.prototype.push = function push(location) {
 
 const routes = [
   { path: '/', redirect: '/login' },
-  { path: '/login', component: Login },
-  { path: '/home',
-    component: Home,
-    redirect: '/Welcome',
-    children: [
-      { path: '/home', component: Welcome },
-      { path: '/users', component: Users },
-      { path: '/rights', component: Rights },
-      { path: '/roles', component: Roles },
-      { path: '/categories', component: Cate },
-      { path: '/params', component: Params },
-      { path: '/goods', component: GoodsList },
-      { path: '/goods/add', component: Add },
-      { path: '/orders', component: Order },
-      { path: '/reports', component: Report }
-    ] },
-	
-	// 错误路由
-	  {path: "/404",name: "404",component: Error,visible: false,},
-	  {path: "*",redirect: "/404",visible: false,},
-
+ { path: '/login', component: Login },
+ { path: '/home',
+   component: Home,
+   redirect: '/Welcome',
+   children: [
+     { path: '/home', component: Welcome },
+     { path: '/users', component: Users },
+     { path: '/rights', component: Rights },
+     { path: '/roles', component: Roles },
+     { path: '/categories', component: Cate },
+     { path: '/params', component: Params },
+     { path: '/goods', component: GoodsList },
+     { path: '/goods/add', component: Add },
+     { path: '/orders', component: Order },
+     { path: '/reports', component: Report }
+   ] },
+ 	
+ 	// 错误路由
+ 	  {path: "/404",name: "404",component: Error,visible: false,},
+ 	  {path: "*",redirect: "/404",visible: false,},
+ 
 ]
 
 const router = new VueRouter({
