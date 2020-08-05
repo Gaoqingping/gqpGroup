@@ -19,35 +19,30 @@
 				</div> -->
 
 
-<el-form ref="loginFormRef" :model="loginForm" :rules="loginFormRules" label-width="60px"  class="login_form" status-icon>
-				
-				
-				  <el-form-item label="账号" prop="username">
-				    <el-input v-model="loginForm.username" prefix-icon="iconfont icon-user"></el-input>
-				  </el-form-item>
-				  
-				  <el-form-item label="密码" prop="password">
-				    <el-input
-				      v-model="loginForm.password"
-				      prefix-icon="iconfont icon-password"
-					  autocomplete="off"
-					  @click.native="changeType"
-					  :type="isOpen ? 'text' : 'password'"
-					  :suffix-icon="
+				<el-form ref="loginFormRef" :model="loginForm" :rules="loginFormRules" label-width="60px" class="login_form"
+				 status-icon>
+
+
+					<el-form-item label="账号" prop="username">
+						<el-input v-model="loginForm.username" prefix-icon="iconfont icon-user"></el-input>
+					</el-form-item>
+
+					<el-form-item label="密码" prop="password">
+						<el-input v-model="loginForm.password" prefix-icon="iconfont icon-password" autocomplete="off" @click.native="changeType"
+						 :type="isOpen ? 'text' : 'password'" :suffix-icon="
 					    isOpen ? 'iconfont icon-icon-test' : 'iconfont icon-biyan'
-					  "
-				    ></el-input>
-				  </el-form-item>
-				  
-				 <div class="btns" >
-						 <el-button class="btn" type="primary" @click="login">登录</el-button>
-						 <el-button class="btn" type="warning" @click="resetLoginForm">重置</el-button>
-				 </div>
-				
-				
-				
-				
-				
+					  "></el-input>
+					</el-form-item>
+
+					<div class="btns">
+						<el-button class="btn" type="primary" @click="login">登录</el-button>
+						<el-button class="btn" type="warning" @click="resetLoginForm">重置</el-button>
+					</div>
+
+
+
+
+
 				</el-form>
 			</div>
 		</div>
@@ -61,7 +56,7 @@
 	export default {
 		data() {
 			return {
-				isOpen:false,
+				isOpen: false,
 				//登录用户名和密码设定
 				loginForm: {
 					username: 'admin',
@@ -99,30 +94,32 @@
 		methods: {
 			//显示密码
 			changeType(e) {
-			  // console.log(e);
-			  if (e.target.className.includes("iconfont")) {
-			    this.isOpen = !this.isOpen;
-			  }
+				// console.log(e);
+				if (e.target.className.includes("iconfont")) {
+					this.isOpen = !this.isOpen;
+				}
 			},
-			
+
 			// 表单重置按钮
 			resetLoginForm() {
 				this.$refs.loginFormRef.resetFields()
 			},
 			login() {
-				this.$refs.loginFormRef.validate(async (valid)=>{
+				this.$refs.loginFormRef.validate(async (valid) => {
 					if (!valid) return false;
-					const { data: res } = await this.$http.post('login', this.loginForm)
+					const {
+						data: res
+					} = await this.$http.post('login', this.loginForm)
 					console.log(res);
-					
+
 					if (res.meta.status !== 200) return this.$message.error('登录失败')
 					this.$message.success('登录成功');
 					window.sessionStorage.setItem('token', res.data.token)
 					this.$router.push('/home')
 				})
-				
-				
-				
+
+
+
 			}
 		}
 	}
@@ -156,7 +153,8 @@
 			left: 50%;
 			transform: translate(-50%, -60%);
 			background-color: #1495e7;
-			&::after{
+
+			&::after {
 				content: '';
 				width: 130px;
 				height: 130px;
@@ -193,12 +191,14 @@
 		width: 100%;
 		display: flex;
 		justify-content: center;
-		.btn{
+
+		.btn {
 			margin: 0px 10px;
-					 &:hover{
-						box-shadow: 0px 0px 5px 5px gold;
-						color: gold; 
-					 }
+
+			&:hover {
+				box-shadow: 0px 0px 5px 5px gold;
+				color: gold;
+			}
 		}
 	}
 
