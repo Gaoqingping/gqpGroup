@@ -6,6 +6,48 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "3098257",
+      "name": "订单",
+      "font_class": "dingdan",
+      "unicode": "e666",
+      "unicode_decimal": 58982
+    },
+    {
+      "icon_id": "6308133",
+      "name": "商品管理",
+      "font_class": "shangpinguanli1",
+      "unicode": "e696",
+      "unicode_decimal": 59030
+    },
+    {
+      "icon_id": "3742864",
+      "name": "用户",
+      "font_class": "yonghu",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "11672360",
+      "name": "角色管理",
+      "font_class": "jiaoseguanli",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "1876331",
+      "name": "管理中心",
+      "font_class": "guanlizhongxin",
+      "unicode": "e670",
+      "unicode_decimal": 58992
+    },
+    {
+      "icon_id": "12959359",
+      "name": "退出登录",
+      "font_class": "tuichudenglu",
+      "unicode": "e632",
+      "unicode_decimal": 58930
+    },
+    {
       "icon_id": "2570196",
       "name": "闭眼",
       "font_class": "biyan",

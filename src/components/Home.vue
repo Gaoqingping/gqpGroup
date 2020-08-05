@@ -154,12 +154,12 @@
 				  <el-col class="header-right">
 				    <el-dropdown @command="handerCommand">
 				      <span>
-				        欢迎您 admin
+				        欢迎您 {{ account }}
 				        <i class="el-icon-arrow-down el-icon--right"></i>
 				      </span>
 				      <el-dropdown-menu slot="dropdown">
-				        <el-dropdown-item command="home">个人中心</el-dropdown-item>
-				        <el-dropdown-item command="logout">退出登录</el-dropdown-item>
+				        <el-dropdown-item command="home"><i class="iconfont icon-guanlizhongxin"></i> 个人中心</el-dropdown-item>
+				        <el-dropdown-item command="logout"><i class="iconfont icon-tuichudenglu"></i>退出登录</el-dropdown-item>
 				      </el-dropdown-menu>
 				    </el-dropdown>
 				    <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png">
@@ -181,6 +181,7 @@
 </template>
 
 <script>
+	import local from "@/utils/local";
 	export default{
 		data:function(){
 			return {
@@ -197,12 +198,15 @@
 			  isCollapse: false,
 			  // 被激活导航地址
 			  activePath: '',
+			  account:'',
 			}
 		},
 		created () {
 		  this.getMenuList()
-		  this.activePath = window.sessionStorage.getItem('activePath')
+		  this.activePath = window.sessionStorage.getItem('activePath');
+		  this.account = local.get('username')
 		},
+		
 		methods: {
 			handerCommand(cmd) {
 			  console.log(cmd);
@@ -213,6 +217,7 @@
 			    this.$message.warning("您已成功退出!!");
 			    // 清空token
 			    window.sessionStorage.clear()
+				local.clear();
 			    this.$router.push('/login')
 			    // 刷新浏览器【重新初始化路由】
 			    location.reload();
@@ -233,10 +238,16 @@
 		    // console.log(res)
 		  },
 		  
+		  
+		 
+		  
 		  // 保存连接的激活地址
 		  saveNavState (activePath) {
 		    window.sessionStorage.setItem('activePath', activePath)
 		  }
+		},
+		mounted() {
+			// console.log(this.$route.params.username)
 		}
 	}
 </script>

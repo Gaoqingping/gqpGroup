@@ -53,6 +53,8 @@
 </template>
 
 <script>
+	// 导入工具类-local.js
+	import local from "@/utils/local";
 	export default {
 		data() {
 			return {
@@ -106,22 +108,29 @@
 			},
 			login() {
 				this.$refs.loginFormRef.validate(async (valid) => {
-					if (!valid) return false;
-					const {
-						data: res
-					} = await this.$http.post('login', this.loginForm)
-					console.log(res);
+						if (!valid) return false;
+						const {
+							data: res
+						} = await this.$http.post('login', this.loginForm)
+						
+						// console.log(res);
+						// console.log(res.data.username)
+						if (res.meta.status !== 200) return this.$message.error('登录失败')
+						this.$message.success('登录成功');
+						window.sessionStorage.setItem('token', res.data.token)
 
-					if (res.meta.status !== 200) return this.$message.error('登录失败')
-					this.$message.success('登录成功');
-					window.sessionStorage.setItem('token', res.data.token)
-					this.$router.push('/home')
+						this.$router.push('/home');
+
+                   //存储用户名到本地
+					local.set("username", res.data.username);
+
+
 				})
 
 
 
-			}
 		}
+	}
 	}
 </script>
 
