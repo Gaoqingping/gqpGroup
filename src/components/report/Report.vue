@@ -1,18 +1,4 @@
 <template>
-<<<<<<< HEAD
-  <el-container>
-    <!-- Breadcrumb 面包屑 -->
-    <el-breadcrumb separator-class="el-icon-arrow-right">
-      <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
-      <el-breadcrumb-item>数据统计</el-breadcrumb-item>
-      <el-breadcrumb-item>数据报表</el-breadcrumb-item>
-    </el-breadcrumb>
-
-    <el-card>
-      <div id="myChart" style="width:1000px;height:480px;"></div>
-    </el-card>
-  </el-container>
-=======
 	<el-container>
 		<!-- Breadcrumb 面包屑 -->
 		<el-breadcrumb separator-class="el-icon-arrow-right">
@@ -27,7 +13,6 @@
 
 
 	</el-container>
->>>>>>> 777b14dbbd32dbfe0f4bd59c5b0d33f765d6ed6f
 </template>
 
 <script>
