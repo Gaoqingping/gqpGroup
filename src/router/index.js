@@ -32,6 +32,8 @@ VueRouter.prototype.push = function push(location) {
 const routes = [
   { path: '/', redirect: '/login' },
  { path: '/login', component: Login },
+ 
+ //登录后的大路由
  { path: '/home',
    component: Home,
    redirect: '/Welcome',
