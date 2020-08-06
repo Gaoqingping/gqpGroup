@@ -36,14 +36,14 @@
             </template>
         </el-table-column>
         <el-table-column label="操作">
-            <template slot-scope="scope">
+            <template slot-scope='scope'>
                 <el-button size="mini" type="primary" icon="el-icon-edit" @click="showBox"></el-button>
                 <el-button size="mini" type="success" icon="el-icon-location" @click='showProgress'></el-button>
             </template>
         </el-table-column>
     </el-table>
     
-    <!-- 分页区域 -->
+    <!-- 分页区域  -->
      <el-pagination
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
@@ -144,7 +144,7 @@ export default {
             this.getOrderList()
         },
         handleCurrentChange(newPage){
-            this.queryInfo.pagenum = newPage
+            this,queryInfo,pagenum = newPage
             this.getOrderList()
         },
         //展示修改地址的对话框
