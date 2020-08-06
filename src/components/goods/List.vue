@@ -28,15 +28,25 @@
         <el-table-column label="创建时间" prop="add_time" width="140px">
           <template slot-scope="scope">{{scope.row.add_time | dataFormat }}</template>
         </el-table-column>
-        <el-table-column label="操作" width="130px">
+        <el-table-column label="操作" width="160px">
           <template slot-scope="scope">
-            <el-button type="primary" icon="el-icon-edit" size="mini"></el-button>
+			  
+			  <!-- 修改商品-->
+            <el-button 
+			type="primary" 
+			icon="el-icon-edit"
+			size="mini"
+			@click="goEditPage(scope.row.goods_id)">
+			编辑
+			</el-button>
+			
+			<!-- 删除商品 -->
             <el-button
               type="danger"
               icon="el-icon-delete"
               size="mini"
               @click="removeById(scope.row.goods_id)"
-            ></el-button>
+            >删除</el-button>
           </template>
         </el-table-column>
       </el-table>
@@ -94,6 +104,8 @@ export default {
       this.queryInfo.pagenum = newSize;
       this.getGoodsList();
     },
+	
+	
     // 通过Id删除商品
     async removeById(id) {
       const confirmResult = await this.$confirm(
@@ -115,6 +127,12 @@ export default {
       this.$message.success("删除商品成功！");
       this.getGoodsList();
     },
+	
+	//重新编辑商品
+	goEditPage(id){
+		this.$router.push(`/goods/edit/${id}`)
+	},
+	//添加商品
     goAddPage() {
       this.$router.push("/goods/add");
     },
@@ -123,4 +141,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
+	/deep/.el-table .cell{
+		display: flex;
+		justify-content: space-around;
+	}
 </style>

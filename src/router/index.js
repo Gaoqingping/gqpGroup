@@ -16,6 +16,7 @@ const Cate = () => import( /* webpackChunkName: "Cate_Params" */ '../components/
 const Params = () => import( /* webpackChunkName: "Cate_Params" */ '../components/goods/Params.vue')
 const GoodsList = () => import( /* webpackChunkName: "GoodsList_Add" */ '../components/goods/List.vue')
 const Add = () => import( /* webpackChunkName: "GoodsList_Add" */ '../components/goods/Add.vue')
+const Edit = () => import( /* webpackChunkName: "GoodsList_Add" */ '../components/goods/Edit.vue')
 const Order = () => import( /* webpackChunkName: "Order_Report" */ '../components/order/Order.vue')
 const Report = () => import( /* webpackChunkName: "Order_Report" */ '../components/report/Report.vue')
 const Error = () => import( /* webpackChunkName: "Order_Report" */ '../components/error/404.vue')
@@ -74,6 +75,10 @@ const routes = [{
 			{
 				path: '/goods/add',
 				component: Add
+			},
+			{
+				path: '/goods/edit/:id',
+				component: Edit
 			},
 			{
 				path: '/orders',
