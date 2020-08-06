@@ -9,7 +9,8 @@
 
 		<el-card>
 			<!--提示信息-->
-			<el-alert title="编辑商品信息" type="info" center show-icon :closable="false"></el-alert>
+			<el-alert title="编辑商品信息" type="info" center show-icon :closable="false">
+			</el-alert>
 			<!--步骤条-->
 			<el-steps :space="200" :active="activeIndex - 0" finish-status="success" align-center>
 				<el-step title="基本信息"></el-step>
