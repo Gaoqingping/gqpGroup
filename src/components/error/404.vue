@@ -11,7 +11,7 @@
 export default {
   methods: {
     handerRef() {
-      this.$router.push("/");
+      this.$router.push("/home");
     },
   },
 };

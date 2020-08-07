@@ -150,7 +150,7 @@
 		position: absolute;
 		left: 50%;
 		top: 50%;
-		-webkit-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
 		background-color: #fff;
 
 		.avatar_box {

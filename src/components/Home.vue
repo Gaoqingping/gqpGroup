@@ -83,7 +83,7 @@
 		  >
 			 <div :width="isCollapse ? '64px' : '240px'">
 				 <img src="../assets/logo.png" alt />
-			   <span v-if="!isCollapse">苏宁易购后台管理系统</span>
+			   <span v-if="!isCollapse">苏宁小店后台管理系统</span>
 			 </div>
 		  </el-menu>
 		  
@@ -199,12 +199,14 @@
 			  // 被激活导航地址
 			  activePath: '',
 			  account:'',
+			  breadArr: [], // 面包屑导航
 			}
 		},
 		created () {
 		  this.getMenuList()
 		  this.activePath = window.sessionStorage.getItem('activePath');
-		  this.account = local.get('username')
+		  this.account = local.get('username');
+		  this.calcBread()
 		},
 		
 		methods: {
@@ -244,7 +246,26 @@
 		  // 保存连接的激活地址
 		  saveNavState (activePath) {
 		    window.sessionStorage.setItem('activePath', activePath)
-		  }
+		  },
+		  
+		  
+		  // 计算面包屑
+		  calcBread() {
+		    let arr = [{ title: "首页", path: "/home" }];
+		    this.$route.matched.forEach((v) => {
+		      // console.log(v);
+		      // 如果有Meta并且meta中有title，证明了配置有了
+		      if (v.meta && v.meta.title) {
+		        arr.push({
+		          title: v.meta.title,
+		          path: v.path,
+		        });
+		      }
+		    });
+		    this.breadArr = arr;
+		    console.log(this.breadArr);
+		  },
+		  
 		},
 		mounted() {
 			// console.log(this.$route.params.username)

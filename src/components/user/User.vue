@@ -23,7 +23,7 @@
       <el-table :data="userlist" border stripe>
         <!-- stripe: 斑马条纹
         border：边框-->
-        <el-table-column type="index" label="#"></el-table-column>
+        <el-table-column type="index" label="序号"></el-table-column>
         <el-table-column prop="username" label="姓名"></el-table-column>
         <el-table-column prop="email" label="邮箱"></el-table-column>
         <el-table-column prop="mobile" label="电话"></el-table-column>
@@ -33,22 +33,26 @@
             <el-switch v-model="scope.row.mg_state" @change="userStateChanged(scope.row)"></el-switch>
           </template>
         </el-table-column>
-        <el-table-column label="操作">
+        <el-table-column label="操作" width="260px">
           <template slot-scope="scope">
             <el-button
               type="primary"
               icon="el-icon-edit"
-              size="mini"
-              circle
+			  size="mini"
               @click="showEditDialog(scope.row.id)"
-            ></el-button>
+            >
+			编辑
+			</el-button>
+			
             <el-button
               type="danger"
               icon="el-icon-delete"
-              size="mini"
-              circle
+             size="mini"
               @click="removeUserById(scope.row.id)"
-            ></el-button>
+            >
+			删除
+			</el-button>
+			
             <el-tooltip
               class="item"
               effect="dark"
@@ -412,4 +416,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
+	/deep/.el-table .cell{
+			display: flex;
+			justify-content: space-around;
+		}
 </style>

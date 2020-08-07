@@ -1,10 +1,12 @@
 <template>
 	<div>
-		<!-- Breadcrumb 面包屑 -->
-		<el-breadcrumb separator-class="el-icon-arrow-right">
-			<el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
-			<el-breadcrumb-item>后台首页</el-breadcrumb-item>
-		</el-breadcrumb>
+		<el-col>
+			<!-- Breadcrumb 面包屑 -->
+			<el-breadcrumb separator-class="el-icon-arrow-right">
+				<el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
+				<el-breadcrumb-item>后台首页</el-breadcrumb-item>
+			</el-breadcrumb>
+		</el-col>
 
 
 		<el-row :gutter="20">
@@ -293,4 +295,12 @@
 		margin-top: 30px;
 		height: 360px;
 	}
+	/deep/.el-breadcrumb {
+    margin-bottom: 20px;
+    font-size: 20px;
+	.el-breadcrumb__item{
+		margin-bottom: 20px;
+		font-size: 20px;
+	}
+}
 </style>

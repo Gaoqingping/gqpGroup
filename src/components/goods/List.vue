@@ -27,8 +27,9 @@
         <el-table-column label="商品数量" prop="goods_number" width="70px"></el-table-column>
         <el-table-column label="创建时间" prop="add_time" width="140px">
           <template slot-scope="scope">{{scope.row.add_time | dataFormat }}</template>
+          <!-- <template slot-scope="scope">{{scope.row.add_time}}</template> -->
         </el-table-column>
-        <el-table-column label="操作" width="160px">
+        <el-table-column label="操作" width="200px">
           <template slot-scope="scope">
 			  
 			  <!-- 修改商品-->

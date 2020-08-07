@@ -255,7 +255,7 @@
 						this.$http.put(`goods/${this.editForm.goods_id}`, form).then(response => {
 							const res = response.data
 							if (res.meta.status === 200) {
-								this.$message.success(res.meta.msg)
+								this.$message.success("商品修改成功!")
 								this.$router.push('/goods')
 							} else {
 								this.$message.error(res.meta.msg)

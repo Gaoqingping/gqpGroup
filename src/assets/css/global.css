@@ -39,7 +39,14 @@ div .el-scrollbar__wrap {
 .el-steps {
     margin: 15px 0;
 }
-
+.el-breadcrumb {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.el-breadcrumb__item{
+		margin-bottom: 20px;
+		font-size: 20px;
+	}
 .el-step__title {
     font-size: 13px;
 }

@@ -9,9 +9,8 @@
     <!-- 卡片视图 -->
     <el-card>
       <el-table :data="rightsList" border stripe>
-        <el-table-column type="index" label="#"></el-table-column>
+        <el-table-column type="index" label="序号"></el-table-column>
         <el-table-column label="权限名称" prop="authName"></el-table-column>
-        <el-table-column label="路径" prop="path"></el-table-column>
         <el-table-column label="权限等级" prop="level">
           <template slot-scope="scope">
             <el-tag v-if="scope.row.level === '0'">一级</el-tag>
@@ -48,4 +47,8 @@ export default {
 </script>
 
 <style lang='less' scoped>
+	/deep/.el-table .cell{
+			display: flex;
+			justify-content:center;
+		}
 </style>
